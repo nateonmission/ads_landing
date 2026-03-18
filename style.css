@@ -1,8 +1,8 @@
 /* ============================================================
-   ALLEN DATA SERVICES — style.css
-   Theme: Landing Page - Dark
+   HOME I.T. CONCIERGE — style.css
+   Theme: Industrial Terminal / Techy-but-approachable
    ============================================================ */
-   @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+
 :root {
   --bg:        #0d0f14;
   --bg2:       #13161e;
@@ -19,6 +19,16 @@
   --display:   'Bruno Ace', sans-serif;
   --radius:    4px;
   --transition: 0.25s ease;
+}
+
+/* ── Business mode — 1980s amber display ── */
+html.biz-mode {
+  --accent:    #ffb300;
+  --accent2:   #ff8c00;
+  --warn:      #e65c00;
+  --border:    #3a2e00;
+  --surface:   #1e1a00;
+  --bg3:       #1a1600;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -70,7 +80,7 @@ img { display: block; max-width: 100%; }
   justify-content: space-between;
 }
 .nav-logo {
-  font-family: var(--mono);
+  font-family: var(--display);
   font-size: 1.1rem;
   font-weight: 800;
   letter-spacing: 0.02em;
@@ -166,7 +176,7 @@ img { display: block; max-width: 100%; }
 
 .hero-title {
   font-family: var(--display);
-  font-size: clamp(3rem, 5vw, 4.25rem);
+  font-size: clamp(3rem, 6vw, 4rem);
   font-weight: 800;
   line-height: 1.0;
   letter-spacing: -0.02em;
@@ -307,6 +317,7 @@ img { display: block; max-width: 100%; }
 }
 .ticker-track {
   display: flex;
+  width: max-content;
   gap: 2rem;
   white-space: nowrap;
   animation: ticker 28s linear infinite;
@@ -554,7 +565,7 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  /*max-width: 1050px;*/
+  max-width: 860px;
   margin: 0 auto;
 }
 .contact-card {
@@ -577,10 +588,10 @@ img { display: block; max-width: 100%; }
 }
 .contact-value {
   font-family: var(--mono);
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 0.95rem;
+  font-weight: 500;
   color: var(--text);
-  word-break: break-word;
+  word-break:keep-all;
 }
 
 /* ── FOOTER ── */
@@ -636,4 +647,112 @@ img { display: block; max-width: 100%; }
   .services-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .hero-title { font-size: 2.8rem; }
+  .toggle-label { font-size: 0.68rem; letter-spacing: 0.03em; }
+}
+
+/* ── MODE TOGGLE — floating pill ── */
+.hidden { display: none !important; }
+
+.mode-toggle-wrap {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  user-select: none;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+}
+
+.toggle-label {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.toggle-label.active {
+  color: var(--accent);
+}
+
+.toggle-track {
+  width: 44px;
+  height: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  position: relative;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.toggle-track.business-mode {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background: var(--text-muted);
+  border-radius: 50%;
+  transition: transform 0.25s ease, background var(--transition);
+}
+
+.toggle-track.business-mode .toggle-thumb {
+  transform: translateX(20px);
+  background: var(--bg);
+}
+
+/* Mode transition fade — exclude ticker tracks which have their own animation */
+.mode-r:not(.ticker-track), .mode-b:not(.ticker-track) {
+  animation: modeFade 0.35s ease;
+}
+
+@keyframes modeFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Business nav CTA color */
+.nav-cta-alt {
+  background: var(--accent2) !important;
+  border-color: var(--accent2) !important;
+}
+.nav-cta-alt:hover {
+  background: transparent !important;
+  color: var(--accent2) !important;
+}
+
+/* ── Business mode amber grid overlay ── */
+html.biz-mode .hero-grid-overlay {
+  background-image:
+    linear-gradient(rgba(255,179,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,179,0,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ── Mode toggle responsive — must come after base toggle rules to win cascade ── */
+@media (max-width: 900px) {
+  .mode-toggle-wrap {
+    top: 72px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mode-toggle-wrap {
+    left: 1.25rem;
+    transform: none;
+  }
 }

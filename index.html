@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=DM+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,29 +17,43 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <div class="nav-logo">
-        <span class="mono">&gt;_</span> Allen Data Services
+        <span class="mono">&gt;_</span>
+        <span class="nav-logo-r">HIT Concierge</span>
+        <span class="nav-logo-b hidden">Allen Data Services</span>
       </div>
+
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="tel:2513330015" class="nav-cta">Call Now</a></li>
+        <li class="nav-cta-r"><a href="tel:2513330015" class="nav-cta">Call Now</a></li>
+        <li class="nav-cta-b hidden"><a href="mailto:nathan@allendataservices.com" class="nav-cta nav-cta-alt">Get in Touch</a></li>
       </ul>
     </div>
   </nav>
+
+  <!-- MODE TOGGLE — floating pill, outside nav stack -->
+  <div class="mode-toggle-wrap" id="modeToggle">
+    <span class="toggle-label tl-r">Residential</span>
+    <div class="toggle-track">
+      <div class="toggle-thumb"></div>
+    </div>
+    <span class="toggle-label tl-b">Business</span>
+  </div>
 
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-grid-overlay"></div>
     <div class="scanline"></div>
 
-    <div class="hero-inner">
+    <!-- RESIDENTIAL HERO -->
+    <div class="hero-inner mode-r">
       <div class="hero-text">
         <div class="hero-eyebrow mono">
           <span class="blink">█</span>&nbsp; Mobile &amp; Baldwin Counties, AL
         </div>
         <h1 class="hero-title">
-          Tech Help<br/>
+          Home Tech Help<br/>
           <span class="accent">That Shows Up.</span>
         </h1>
         <p class="hero-sub">
@@ -47,7 +62,7 @@
         </p>
         <div class="hero-actions">
           <a href="tel:2513330015" class="btn-primary">
-            <span class="mono">$ </span>call (251) 333-0015
+            <span class="mono">tel: </span>(251) 333-0015
           </a>
           <a href="#services" class="btn-ghost">View Services →</a>
         </div>
@@ -57,7 +72,6 @@
           <span class="badge">✓ No Drop-Off Required</span>
         </div>
       </div>
-
       <div class="hero-photo-wrap">
         <div class="photo-frame">
           <div class="photo-corner tl"></div>
@@ -70,12 +84,52 @@
       </div>
     </div>
 
+    <!-- BUSINESS HERO -->
+    <div class="hero-inner mode-b hidden">
+      <div class="hero-text">
+        <div class="hero-eyebrow mono">
+          <span class="blink">█</span>&nbsp; Allen Data Services — Mobile, AL
+        </div>
+        <h1 class="hero-title">
+          Backend &amp; AI<br/>
+          <span class="accent">Engineering.</span>
+        </h1>
+        <p class="hero-sub">
+          Python developer with 30+ years of experience building APIs,<br/>
+          data pipelines, and AI-powered tools for real business problems.
+        </p>
+        <div class="hero-actions">
+          <a href="tel:2513330015" class="btn-primary">
+            <span class="mono">tel: </span>(251) 333-0015
+          </a>
+          </a>
+          <a href="#services" class="btn-ghost">View Services →</a>
+        </div>
+        <div class="hero-badges">
+          <span class="badge">✓ AWS Cloud Practitioner</span>
+          <span class="badge">✓ FastAPI / Python</span>
+          <span class="badge">✓ LLM Integration</span>
+          <span class="badge">✓ ETL Pipelines</span>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="photo-frame">
+          <div class="photo-corner tl"></div>
+          <div class="photo-corner tr"></div>
+          <div class="photo-corner bl"></div>
+          <div class="photo-corner br"></div>
+          <img src="nathan.jpeg" alt="Nathan Allen — Allen Data Services" class="hero-photo" />
+          <div class="photo-label mono">allen_data_services.py <span class="blink">▌</span></div>
+        </div>
+      </div>
+    </div>
+
     <div class="hero-scroll-hint mono">scroll_down ↓</div>
   </section>
 
   <!-- TICKER -->
   <div class="ticker-wrap">
-    <div class="ticker-track">
+    <div class="ticker-track mode-r">
       <span>Virus Removal</span><span class="sep">◆</span>
       <span>WiFi Setup</span><span class="sep">◆</span>
       <span>New PC Setup</span><span class="sep">◆</span>
@@ -92,104 +146,165 @@
       <span>Smart TV Setup</span><span class="sep">◆</span>
       <span>PC Tune-Up</span><span class="sep">◆</span>
       <span>Remote Support</span><span class="sep">◆</span>
+    </div>
+    <div class="ticker-track mode-b hidden">
+      <span>Python Development</span><span class="sep">◆</span>
+      <span>FastAPI</span><span class="sep">◆</span>
+      <span>ETL Pipelines</span><span class="sep">◆</span>
+      <span>LLM Integration</span><span class="sep">◆</span>
+      <span>AWS Cloud</span><span class="sep">◆</span>
+      <span>PostgreSQL</span><span class="sep">◆</span>
+      <span>Data Analytics</span><span class="sep">◆</span>
+      <span>AI Workflows</span><span class="sep">◆</span>
+      <span>Python Development</span><span class="sep">◆</span>
+      <span>FastAPI</span><span class="sep">◆</span>
+      <span>ETL Pipelines</span><span class="sep">◆</span>
+      <span>LLM Integration</span><span class="sep">◆</span>
+      <span>AWS Cloud</span><span class="sep">◆</span>
+      <span>PostgreSQL</span><span class="sep">◆</span>
+      <span>Data Analytics</span><span class="sep">◆</span>
+      <span>AI Workflows</span><span class="sep">◆</span>
     </div>
   </div>
 
   <!-- SERVICES -->
   <section class="services" id="services">
     <div class="container">
-      <div class="section-label mono"># services</div>
-      <h2 class="section-title">What We Fix</h2>
-      <p class="section-sub">Everything done at your home. No store drop-off. No waiting days for your computer back.</p>
 
-      <div class="services-grid">
-        <div class="service-card" data-index="01">
-          <div class="service-icon">🛡️</div>
-          <h3>Virus &amp; Malware Removal</h3>
-          <p>Full system scan, complete removal, browser cleanup, and basic hardening so it doesn't happen again.</p>
-          <div class="service-price mono">flat rate $75</div>
+      <!-- RESIDENTIAL SERVICES -->
+      <div class="mode-r">
+        <div class="section-label mono"># services</div>
+        <h2 class="section-title">What We Fix</h2>
+        <p class="section-sub">Everything done at your home. No store drop-off. No waiting days for your computer back.</p>
+        <div class="services-grid">
+          <div class="service-card" data-index="01">
+            <div class="service-icon">🛡️</div>
+            <h3>Virus &amp; Malware Removal</h3>
+            <p>Full system scan, complete removal, browser cleanup, and basic hardening so it doesn't happen again.</p>
+            <div class="service-price mono">flat rate $75</div>
+          </div>
+          <div class="service-card" data-index="02">
+            <div class="service-icon">⚡</div>
+            <h3>PC Tune-Up</h3>
+            <p>Remove startup bloat, update drivers, clear junk files. Most computers feel like new after a tune-up.</p>
+            <div class="service-price mono">flat rate $65</div>
+          </div>
+          <div class="service-card" data-index="03">
+            <div class="service-icon">📶</div>
+            <h3>WiFi &amp; Network Setup</h3>
+            <p>Router setup, coverage extension, connect all your devices, secure your network with a strong password.</p>
+            <div class="service-price mono">flat rate $70</div>
+          </div>
+          <div class="service-card" data-index="04">
+            <div class="service-icon">💻</div>
+            <h3>New PC Setup &amp; Data Transfer</h3>
+            <p>Unbox, configure, set up your accounts, and move everything from your old computer to the new one.</p>
+            <div class="service-price mono">flat rate $85</div>
+          </div>
+          <div class="service-card" data-index="05">
+            <div class="service-icon">🖨️</div>
+            <h3>Printer Setup</h3>
+            <p>Install, connect wirelessly, test print, and configure scanning. We speak printer — so you don't have to.</p>
+            <div class="service-price mono">flat rate $55</div>
+          </div>
+          <div class="service-card" data-index="06">
+            <div class="service-icon">📺</div>
+            <h3>Smart TV &amp; Streaming Setup</h3>
+            <p>Connect to WiFi, install Netflix, Hulu, Prime, and more. Get your remote programmed and working.</p>
+            <div class="service-price mono">flat rate $50</div>
+          </div>
         </div>
-        <div class="service-card" data-index="02">
-          <div class="service-icon">⚡</div>
-          <h3>PC Tune-Up</h3>
-          <p>Remove startup bloat, update drivers, clear junk files. Most computers feel like new after a tune-up.</p>
-          <div class="service-price mono">flat rate $65</div>
-        </div>
-        <div class="service-card" data-index="03">
-          <div class="service-icon">📶</div>
-          <h3>WiFi &amp; Network Setup</h3>
-          <p>Router setup, coverage extension, connect all your devices, secure your network with a strong password.</p>
-          <div class="service-price mono">flat rate $70</div>
-        </div>
-        <div class="service-card" data-index="04">
-          <div class="service-icon">💻</div>
-          <h3>New PC Setup &amp; Data Transfer</h3>
-          <p>Unbox, configure, set up your accounts, and move everything from your old computer to the new one.</p>
-          <div class="service-price mono">flat rate $85</div>
-        </div>
-        <div class="service-card" data-index="05">
-          <div class="service-icon">🖨️</div>
-          <h3>Printer Setup</h3>
-          <p>Install, connect wirelessly, test print, and configure scanning. We speak printer — so you don't have to.</p>
-          <div class="service-price mono">flat rate $55</div>
-        </div>
-        <div class="service-card" data-index="06">
-          <div class="service-icon">📺</div>
-          <h3>Smart TV &amp; Streaming Setup</h3>
-          <p>Connect to WiFi, install Netflix, Hulu, Prime, and more. Get your remote programmed and working.</p>
-          <div class="service-price mono">flat rate $50</div>
+        <div class="services-note mono">
+          &gt; Senior discount available on all services &nbsp;|&nbsp; Remote support also available
         </div>
       </div>
 
-      <div class="services-note mono">
-        &gt; Senior discount available on all services &nbsp;|&nbsp; Remote support also available
+      <!-- BUSINESS SERVICES -->
+      <div class="mode-b hidden">
+        <div class="section-label mono"># services</div>
+        <h2 class="section-title">What We Build</h2>
+        <p class="section-sub">Backend systems, data pipelines, and AI-powered tools. Delivered as a solo consultant with the expertise of a senior engineer.</p>
+        <div class="services-grid">
+          <div class="service-card" data-index="01">
+            <div class="service-icon">🐍</div>
+            <h3>Python Backend Development</h3>
+            <p>REST APIs with FastAPI or Flask, SQLAlchemy data models, PostgreSQL and MongoDB. Production-ready, documented, and tested.</p>
+            <div class="service-price mono">project-based</div>
+          </div>
+          <div class="service-card" data-index="02">
+            <div class="service-icon">🤖</div>
+            <h3>LLM &amp; AI Integration</h3>
+            <p>Integrate Claude, ChatGPT, or Gemini into your workflows. RAG pipelines, prompt engineering, AI-augmented reporting and automation.</p>
+            <div class="service-price mono">project-based</div>
+          </div>
+          <div class="service-card" data-index="03">
+            <div class="service-icon">🔁</div>
+            <h3>ETL Pipeline Development</h3>
+            <p>Ingest, transform, and load data from JSON, SQL, CSV, and APIs. Reliable pipelines with monitoring, alerting, and scheduled runs.</p>
+            <div class="service-price mono">project-based</div>
+          </div>
+          <div class="service-card" data-index="04">
+            <div class="service-icon">☁️</div>
+            <h3>AWS Cloud Architecture</h3>
+            <p>Deploy and maintain workloads on EC2, Lambda, S3, RDS, and API Gateway. CloudWatch monitoring and cost-conscious architecture.</p>
+            <div class="service-price mono">project-based</div>
+          </div>
+          <div class="service-card" data-index="05">
+            <div class="service-icon">📊</div>
+            <h3>Data Analysis &amp; Reporting</h3>
+            <p>Pandas, NumPy, and Jupyter-based analysis. Automated Excel exports, Tableau dashboards, and plain-English insight reports.</p>
+            <div class="service-price mono">project-based</div>
+          </div>
+          <div class="service-card" data-index="06">
+            <div class="service-icon">⚙️</div>
+            <h3>Workflow Automation</h3>
+            <p>Eliminate repetitive manual work with Python scripts and AI-assisted tools. Clients have saved 8+ hours per week on recurring tasks.</p>
+            <div class="service-price mono">project-based</div>
+          </div>
+        </div>
+        <div class="services-note mono">
+          &gt; Available for contract, part-time, or project-based engagements &nbsp;|&nbsp; Remote or on-site
+        </div>
       </div>
+
     </div>
   </section>
 
   <!-- WHY -->
   <section class="why">
     <div class="container">
-      <div class="why-grid">
+
+      <!-- RESIDENTIAL WHY -->
+      <div class="why-grid mode-r">
         <div class="why-text">
           <div class="section-label mono"># why_us</div>
           <h2 class="section-title">Not Your Average Tech Support</h2>
           <div class="why-list">
             <div class="why-item">
               <span class="why-check mono">✓</span>
-              <div>
-                <strong>We come to you</strong>
-                <p>No hauling your computer to a store. We work at your kitchen table.</p>
-              </div>
+              <div><strong>We come to you</strong>
+              <p>No hauling your computer to a store. We work at your kitchen table.</p></div>
             </div>
             <div class="why-item">
               <span class="why-check mono">✓</span>
-              <div>
-                <strong>Plain English, always</strong>
-                <p>No jargon. No condescension. We explain what's wrong and what we're doing.</p>
-              </div>
+              <div><strong>Plain English, always</strong>
+              <p>No jargon. No condescension. We explain what's wrong and what we're doing.</p></div>
             </div>
             <div class="why-item">
               <span class="why-check mono">✓</span>
-              <div>
-                <strong>Fair, flat-rate pricing</strong>
-                <p>You know the price before we start. No surprise charges.</p>
-              </div>
+              <div><strong>Fair, flat-rate pricing</strong>
+              <p>You know the price before we start. No surprise charges.</p></div>
             </div>
             <div class="why-item">
               <span class="why-check mono">✓</span>
-              <div>
-                <strong>30+ years of experience</strong>
-                <p>CompTIA A+ certified. AWS certified. Real expertise, not guesswork.</p>
-              </div>
+              <div><strong>30+ years of experience</strong>
+              <p>CompTIA A+ certified. AWS certified. Real expertise, not guesswork.</p></div>
             </div>
           </div>
         </div>
         <div class="why-terminal">
           <div class="terminal-bar">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
             <span class="terminal-title mono">diagnostic.sh</span>
           </div>
           <div class="terminal-body mono">
@@ -206,6 +321,55 @@
           </div>
         </div>
       </div>
+
+      <!-- BUSINESS WHY -->
+      <div class="why-grid mode-b hidden">
+        <div class="why-text">
+          <div class="section-label mono"># why_allen_data</div>
+          <h2 class="section-title">Senior Experience. Solo Agility.</h2>
+          <div class="why-list">
+            <div class="why-item">
+              <span class="why-check mono">✓</span>
+              <div><strong>Real production experience</strong>
+              <p>Migrated Jupyter workflows to FastAPI, reducing DB/S3 calls by 30%. Built ETL pipelines that cut downtime by 13 hours/month.</p></div>
+            </div>
+            <div class="why-item">
+              <span class="why-check mono">✓</span>
+              <div><strong>AI-native development</strong>
+              <p>Deployed internal GPT solutions at enterprise scale. Prompt engineering, RAG pipelines, and LLM-augmented data analysis.</p></div>
+            </div>
+            <div class="why-item">
+              <span class="why-check mono">✓</span>
+              <div><strong>No bloat, no hand-holding</strong>
+              <p>Solo consultant — you get a senior engineer, not a junior who needs supervision. Direct communication, fast turnaround.</p></div>
+            </div>
+            <div class="why-item">
+              <span class="why-check mono">✓</span>
+              <div><strong>Full-stack delivery</strong>
+              <p>From database schema to API to deployment on AWS. One person who owns the whole solution end to end.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="why-terminal">
+          <div class="terminal-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title mono">deploy.py</span>
+          </div>
+          <div class="terminal-body mono">
+            <div class="t-line"><span class="t-prompt">$</span> python deploy.py --env production</div>
+            <div class="t-line t-out">Building FastAPI backend... <span class="t-ok">done</span></div>
+            <div class="t-line t-out">Running pytest suite... <span class="t-ok">48/48 passed</span></div>
+            <div class="t-line t-out">Pushing Docker image... <span class="t-ok">done</span></div>
+            <div class="t-line t-out">Deploying to AWS EC2... <span class="t-ok">live</span></div>
+            <div class="t-line t-out">CloudWatch alarms set... <span class="t-ok">active</span></div>
+            <div class="t-line t-out">ETL pipeline scheduled... <span class="t-ok">every 6h</span></div>
+            <div class="t-line">&nbsp;</div>
+            <div class="t-line"><span class="t-success">✓ Production deployment complete.</span></div>
+            <div class="t-line"><span class="t-prompt">$</span> <span class="blink">▌</span></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -214,7 +378,9 @@
     <div class="container">
       <div class="section-label mono"># about</div>
       <h2 class="section-title">Meet Nathan</h2>
-      <div class="about-grid">
+
+      <!-- RESIDENTIAL ABOUT -->
+      <div class="about-grid mode-r">
         <div class="about-text">
           <p>I'm Nathan Allen — a developer, IT professional, and Mobile County local with over 30 years of hands-on technical experience. I've built data pipelines, deployed cloud infrastructure, and fixed more computers than I can count.</p>
           <p>I started Home IT Concierge because I kept seeing neighbors, seniors, and small business owners getting overcharged and underserved by big-box tech support. You deserve someone who actually explains what's wrong, fixes it right, and charges a fair price.</p>
@@ -228,11 +394,34 @@
         <div class="about-links">
           <div class="section-label mono"># also_a_developer</div>
           <p>Need more than home IT? Allen Data Services offers data consulting, automation, and custom software for small businesses.</p>
-          <a href="https://www.allendataservices.com" target="_blank" class="btn-ghost" style="margin-top:1rem;display:inline-block;">
-            allendataservices.com →
+          <a href="javascript:void(0)" class="btn-ghost" id="switchToBusiness" style="margin-top:1rem;display:inline-block;">
+            View Business Services →
           </a>
         </div>
       </div>
+
+      <!-- BUSINESS ABOUT -->
+      <div class="about-grid mode-b hidden">
+        <div class="about-text">
+          <p>I'm Nathan Allen — a backend Python developer and solo consultant based in Mobile, Alabama. I have 30+ years of technical experience spanning enterprise data engineering, cloud infrastructure, and AI-powered application development.</p>
+          <p>At Directions Research I partnered in deploying an internally hosted GPT solution that enabled natural language querying of datasets, migrated a Jupyter-based workflow into a production FastAPI service, and maintained ETL pipelines serving distributed teams.</p>
+          <p>Through Allen Data Services I build practical AI workflows, full-stack Python applications, and data systems for clients who need results — not overengineered solutions and bloated timelines.</p>
+          <div class="about-certs">
+            <div class="cert-badge mono">AWS Cloud Practitioner</div>
+            <div class="cert-badge mono">FastAPI / Python</div>
+            <div class="cert-badge mono">LLM Engineering</div>
+            <div class="cert-badge mono">ETL / Data Pipelines</div>
+          </div>
+        </div>
+        <div class="about-links">
+          <div class="section-label mono"># stack</div>
+          <p style="margin-bottom:0.75rem;font-size:0.88rem;">Python · FastAPI · Flask · Django · PostgreSQL · MongoDB · SQLAlchemy · Pandas · NumPy · Docker · AWS (EC2, S3, Lambda, RDS, CloudWatch) · Claude · ChatGPT · Gemini · Git</p>
+          <a href="https://github.com/nateonmission" target="_blank" class="btn-ghost" style="margin-top:1rem;display:inline-block;">
+            github.com/nateonmission →
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -240,41 +429,73 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="section-label mono"># contact</div>
-      <h2 class="section-title">Let's Fix It Today</h2>
-      <p class="section-sub">Serving Mobile and Baldwin Counties. Call, text, or email — whichever is easiest for you.</p>
 
-      <div class="contact-grid">
-        <a href="tel:2513330015" class="contact-card">
-          <div class="contact-icon mono">📞</div>
-          <div class="contact-label mono">call_or_text</div>
-          <div class="contact-value">(251) 333-0015</div>
-        </a>
-        <a href="mailto:nathan@allendataservices.com" class="contact-card">
-          <div class="contact-icon mono">✉️</div>
-          <div class="contact-label mono">email</div>
-          <div class="contact-value">Nathan@AllenDataServices.com</div>
-        </a>
-        <div class="contact-card">
-          <div class="contact-icon mono">📍</div>
-          <div class="contact-label mono">service_area</div>
-          <div class="contact-value">Mobile &amp; Baldwin<br>Counties, AL</div>
+      <!-- RESIDENTIAL CONTACT -->
+      <div class="mode-r">
+        <h2 class="section-title">Let's Fix It Today</h2>
+        <p class="section-sub">Serving Mobile and Baldwin Counties. Call, text, or email — whichever is easiest for you.</p>
+        <div class="contact-grid">
+          <a href="tel:2513330015" class="contact-card">
+            <div class="contact-icon">📞</div>
+            <div class="contact-label mono">call_or_text</div>
+            <div class="contact-value">(251) 333-0015</div>
+          </a>
+          <a href="mailto:nathan@allendataservices.com" class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-label mono">email</div>
+            <div class="contact-value">nathan@allendataservices.com</div>
+          </a>
+          <div class="contact-card">
+            <div class="contact-icon">📍</div>
+            <div class="contact-label mono">service_area</div>
+            <div class="contact-value">Mobile &amp; Baldwin<br>Counties, AL</div>
+          </div>
         </div>
       </div>
+
+      <!-- BUSINESS CONTACT -->
+      <div class="mode-b hidden">
+        <h2 class="section-title">Let's Build Something</h2>
+        <p class="section-sub">Available for contract, part-time, and project-based engagements. Remote or on-site in the Mobile area.</p>
+        <div class="contact-grid">
+          <a href="mailto:nathan@allendataservices.com" class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-label mono">email</div>
+            <div class="contact-value">nathan@allendataservices.com</div>
+          </a>
+          <a href="https://linkedin.com/in/nateonmission" target="_blank" class="contact-card">
+            <div class="contact-icon">🔗</div>
+            <div class="contact-label mono">linkedin</div>
+            <div class="contact-value">linkedin.com/in/nateonmission</div>
+          </a>
+          <a href="https://github.com/nateonmission" target="_blank" class="contact-card">
+            <div class="contact-icon">💾</div>
+            <div class="contact-label mono">github</div>
+            <div class="contact-value">github.com/nateonmission</div>
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
+
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="footer-left mono">
-        &gt;_ Allen Data Services &nbsp;|&nbsp; © 2025 Allen Data Services LLC
+      <div class="footer-left mono mode-r">
+        &gt;_ Home I.T. Concierge &nbsp;|&nbsp; &copy; 2026 Allen Data Services LLC
+      </div>
+      <div class="footer-left mono mode-b hidden">
+        &gt;_ Allen Data Services LLC &nbsp;|&nbsp; &copy; 2025 Nathan Allen
       </div>
       <div class="footer-right mono">
-        <a href="https://www.allendataservices.com" target="_blank">allendataservices.com</a>
+        <a href="https://www.allendataservices.com">allendataservices.com</a>
       </div>
     </div>
   </footer>
 
   <script src="app.js"></script>
+
 </body>
 </html>
